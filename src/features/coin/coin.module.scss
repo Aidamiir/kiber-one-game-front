@@ -1,0 +1,57 @@
+@import "@styles/mixins";
+
+.content {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.coinBody {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.coin {
+	img {
+		opacity: .5;
+		max-width: rem(300);
+		transition: transform 0.2s, opacity .4s ease-in-out;
+	}
+
+	&:global(.active) {
+		img {
+			opacity: 1;
+
+			&:active {
+				transform: scale(0.95);
+			}
+		}
+	}
+}
+
+.energy {
+	margin-block: rem(25);
+}
+
+.popup {
+	position: absolute;
+	animation: popup-animation 1.2s ease-out;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	pointer-events: none;
+}
+
+@keyframes popup-animation {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+}

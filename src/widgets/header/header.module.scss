@@ -1,0 +1,18 @@
+@import "@styles/mixins";
+
+.header {
+	padding-block: rem(15);
+}
+
+.container {
+	display: flex;
+}
+
+.logo {
+	width: rem(80);
+}
+
+.settings {
+	margin-left: auto;
+	font-size: rem(26);
+}

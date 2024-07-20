@@ -1,0 +1,32 @@
+@import "@styles/mixins";
+
+.container {
+	flex-grow: 1;
+	display: flex;
+}
+
+.content {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.inner {
+	padding-bottom: rem(100);
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.myStats {
+	margin-block: rem(40);
+	gap: rem(10);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.league {
+	font-size: rem(22);
+}

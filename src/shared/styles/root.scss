@@ -1,0 +1,22 @@
+@import "./mixins";
+
+:root {
+	// Default
+	--kog-default-font-family: "Inter", sans-serif;
+	--kog-default-font-size: #{rem(16)};
+	--kog-default-font-weight: 400;
+	--kog-default-line-height: 1;
+	--kog-default-text-color: var(--kog-white-color);
+	--kog-default-transition: 0.3s ease-in-out;
+	--kog-default-radius: #{rem(12)};
+
+	// Colors
+	--kog-background-gradient: radial-gradient(circle, rgba(32, 135, 177, 1) 0%, rgba(0, 0, 0, 1) 85%);
+	--kog-black-color: #000;
+	--kog-white-color: #fff;
+	--kog-dark-blue-color: #00263c;
+	--kog-light-blue-color: #1f566d;
+
+	// Radii
+	--kog-radius-18: #{rem(18)};
+}

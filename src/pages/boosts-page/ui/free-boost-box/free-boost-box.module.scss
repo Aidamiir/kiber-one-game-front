@@ -1,0 +1,36 @@
+@import "@styles/mixins";
+
+.boostBox {
+	padding: rem(14);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(#fff, 20%);
+	border-radius: var(--kog-radius-18);
+
+	&:global(.disabled) {
+		opacity: .5;
+		background-color: rgba(#fefefe, 20%);
+	}
+}
+
+.content {
+	text-align: start;
+	gap: rem(5);
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.name {
+	font-size: rem(15);
+}
+
+.info {
+	color: rgba(#fff, 60%);
+}
+
+.icon {
+	font-size: rem(30);
+}

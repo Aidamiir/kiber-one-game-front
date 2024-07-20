@@ -1,0 +1,30 @@
+@import "functions";
+
+@keyframes fade-up {
+	0% {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes float {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+
+	30% {
+		opacity: 1;
+		transform: translateY(rem(-25));
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(rem(-50));
+	}
+}

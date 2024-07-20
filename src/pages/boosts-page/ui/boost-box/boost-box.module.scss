@@ -1,0 +1,59 @@
+@import "@styles/mixins";
+
+.box {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.image {
+	height: rem(60);
+	width: rem(60);
+	display: flex;
+	background-color: rgba(#fff, 20%);
+	border-radius: var(--kog-default-radius);
+
+	span {
+		margin: auto;
+		font-size: rem(30);
+	}
+}
+
+.title {
+	font-size: rem(16);
+}
+
+.left {
+	align-items: center;
+	display: flex;
+	gap: rem(10);
+}
+
+.price {
+	display: flex;
+	align-items: center;
+	gap: rem(5);
+
+	img {
+		width: rem(17);
+	}
+}
+
+.content {
+	gap: rem(10);
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+
+.priceBox {
+	gap: rem(5);
+	display: flex;
+	align-items: center;
+}
+
+.arrow {
+	width: rem(10);
+}

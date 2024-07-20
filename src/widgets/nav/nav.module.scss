@@ -1,0 +1,25 @@
+@import "@styles/mixins";
+
+.nav {
+	position: absolute;
+	bottom: rem(25);
+	left: 0;
+	width: 100%;
+}
+
+.list {
+	width: 100%;
+	padding-block: rem(15);
+	margin-inline: auto;
+	display: flex;
+	justify-content: center;
+	backdrop-filter: blur(rem(30));
+	background-color: rgba(#fff, 20%);
+	border-radius: var(--kog-radius-18);
+}
+
+.listItem {
+	&:not(:last-child) {
+		border-right: rem(1) solid rgba(#fff, 30%);
+	}
+}
