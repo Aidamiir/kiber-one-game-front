@@ -1,7 +1,7 @@
 {
   "name": "game",
   "private": true,
-  "homepage": "https://aidamiir.github.io/kiber-one-web-app/",
+  "homepage": "https://aidamiir.github.io/kiber-one-game-front/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
