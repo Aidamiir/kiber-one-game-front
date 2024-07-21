@@ -1,0 +1,1 @@
+import{j as n,C as r}from"./index-Cvn7UMsq.js";import{F as e}from"./fade-up-animation-BvBe6Zie.js";const s="_wrapper_njmmu_1",o="_container_njmmu_6",a={wrapper:s,container:o};function c(){return n.jsx(e,{className:"page",children:n.jsx("div",{className:a.wrapper,children:n.jsx(r,{className:a.container,children:"Скоро..."})})})}export{c as default};
