@@ -19,9 +19,11 @@ export const PageLoadedProvider = (props: Props) => {
 		const handleUpdateCoins = (newBalance: number, balance_amount: number) => {
 			dispatch(setBalanceAmount(balance_amount));
 			dispatch(setBalance(newBalance));
+			console.log(newBalance, balance_amount);
 		};
 
 		const handleUpdateEnergy = (newEnergy: number) => {
+			console.log(newEnergy);
 			dispatch(setEnergy(newEnergy));
 		};
 
