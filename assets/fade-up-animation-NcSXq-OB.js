@@ -1,1 +1,0 @@
-import{j as i,c as o}from"./index-DQ88q0Ga.js";const s="_animation_iz2zb_25",c="_float_iz2zb_1",e={animation:s,"fade-up":"_fade-up_iz2zb_1",float:c},_=a=>{const{className:n,children:t}=a;return i.jsx("div",{className:o(e.animation,n),children:t})};export{_ as F};

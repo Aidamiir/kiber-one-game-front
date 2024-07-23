@@ -1,0 +1,1 @@
+import{a as e,j as s}from"./index-B3HFFXvU.js";const o="_balance_v7253_1",l="_coins_v7253_11",a={balance:o,coins:l},i=()=>{const c=e(({user:n})=>n.user.balance);return s.jsxs("div",{className:a.balance,children:[s.jsx("img",{src:"./images/coin.svg",alt:"Монетка"}),s.jsx("span",{className:a.coins,children:c})]})};export{i as B};
