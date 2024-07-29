@@ -5,7 +5,7 @@ import { useAppSelector } from '@/shared/hooks';
 
 export const Energy = (props: Props) => {
 	const { className } = props;
-	const { energy, max_energy } = useAppSelector(({ user }) => user.user);
+	const { energy, maxEnergy } = useAppSelector(({ user }) => user.user);
 
 	return (
 		<div className={cn(className, styles.energy)}>
@@ -14,8 +14,8 @@ export const Energy = (props: Props) => {
 				<span>{energy}</span>
 			</div>
 			<div className={styles.bar}>
-				{energy && max_energy && (
-					<div className={styles.barInner} style={{ width: `${(energy / max_energy) * 100}%` }}></div>
+				{energy && maxEnergy && (
+					<div className={styles.barInner} style={{ width: `${(energy / maxEnergy) * 100}%` }}></div>
 				)}
 			</div>
 		</div>

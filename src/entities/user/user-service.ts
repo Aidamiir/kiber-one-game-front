@@ -5,7 +5,7 @@ import type {
 	TopUserInterface,
 	UpdateBalanceInterface,
 	UpgradeEnergyLimitInterface,
-	UpgradeMutitapInterface
+	UpgradeMultitapInterface
 } from '@/entities';
 
 export const userService = api.injectEndpoints({
@@ -31,7 +31,7 @@ export const userService = api.injectEndpoints({
 			})
 		}),
 
-		energyBoost: builder.mutation<{ quantity_energy_boost: number }, unknown>({
+		energyBoost: builder.mutation<{ quantityEnergyBoost: number }, unknown>({
 			query: (id: number) => ({
 				url: `/users/use-energy-boost/${id}`,
 				method: 'POST',
@@ -41,7 +41,7 @@ export const userService = api.injectEndpoints({
 			})
 		}),
 
-		turboBoost: builder.mutation<{ quantity_turbo_boost: number }, unknown>({
+		turboBoost: builder.mutation<{ quantityTurboBoost: number }, unknown>({
 			query: (id) => ({
 				url: `/users/use-turbo-boost/${id}`,
 				method: 'POST',
@@ -61,7 +61,7 @@ export const userService = api.injectEndpoints({
 			})
 		}),
 
-		upgradeMultitap: builder.mutation<UpgradeMutitapInterface, unknown>({
+		upgradeMultitap: builder.mutation<UpgradeMultitapInterface, unknown>({
 			query: (id) => ({
 				url: `/users/upgrade-multitap/${id}`,
 				method: 'POST',

@@ -13,7 +13,7 @@ export const Stats = () => {
 						</div>
 						<div className={styles.contentInner}>
 							<div className={styles.name}>
-								{data && data.first_name}
+								{data && data.firstName}
 							</div>
 							<div className={styles.coins}>
 								<img src="./images/coin.svg" alt="coind"/>

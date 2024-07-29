@@ -16,6 +16,6 @@ export type {
 	UpdateBalanceInterface,
 	TopUserInterface,
 	RestoreBoostsInterface,
-	UpgradeMutitapInterface,
+	UpgradeMultitapInterface,
 	UpgradeEnergyLimitInterface
 } from './user-types';

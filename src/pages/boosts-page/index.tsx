@@ -27,16 +27,16 @@ export default function BoostsPage() {
 
 	const {
 		id,
-		quantity_energy_boost,
-		max_quantity_energy_boost,
-		quantity_turbo_boost,
-		max_quantity_turbo_boost,
-		energy_boost_time_left,
-		turbo_boost_time_left,
-		multitap_level,
-		multitap_price,
-		energy_limit_level,
-		energy_limit_price
+		quantityEnergyBoost,
+		maxQuantityEnergyBoost,
+		quantityTurboBoost,
+		maxQuantityTurboBoost,
+		energyBoostTimeLeft,
+		turboBoostTimeLeft,
+		multitapLevel,
+		multitapPrice,
+		energyLimitLevel,
+		energyLimitPrice
 	} = useAppSelector(({ user }) => user.user);
 
 	const handleRestoreBoosts = async () => {
@@ -81,17 +81,17 @@ export default function BoostsPage() {
 					<FreeBoostButton
 						name={'Full energy'}
 						icon={'⚡'}
-						time={energy_boost_time_left}
-						quantity={quantity_energy_boost}
-						maxQuantity={max_quantity_energy_boost}
+						time={energyBoostTimeLeft}
+						quantity={quantityEnergyBoost}
+						maxQuantity={maxQuantityEnergyBoost}
 						onClick={handleEnergyBoost}
 					/>
 					<FreeBoostButton
 						name={'3 x Turbo'}
 						icon={'🚀'}
-						time={turbo_boost_time_left}
-						quantity={quantity_turbo_boost}
-						maxQuantity={max_quantity_turbo_boost}
+						time={turboBoostTimeLeft}
+						quantity={quantityTurboBoost}
+						maxQuantity={maxQuantityTurboBoost}
 						onClick={handleTurboBoost}
 					/>
 				</div>
@@ -102,15 +102,15 @@ export default function BoostsPage() {
 					<BoostBox
 						title={'Multitap'}
 						image={'☝️'}
-						price={multitap_price ?? 100}
-						level={multitap_level ?? 0}
+						price={multitapPrice ?? 100}
+						level={multitapLevel ?? 0}
 						callback={handleUpgradeMultitap}
 					/>
 					<BoostBox
 						title={'Energy limit'}
 						image={'🔋'}
-						price={energy_limit_price ?? 100}
-						level={energy_limit_level ?? 0}
+						price={energyLimitPrice ?? 100}
+						level={energyLimitLevel ?? 0}
 						callback={handleUpgradeEnergyLimit}
 					/>
 				</div>

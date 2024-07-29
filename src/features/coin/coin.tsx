@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useRef } from 'react';
 import styles from './coin.module.scss';
+import React, { useState, useCallback, useRef } from 'react';
 import cn from 'classnames';
 import socket from '@/socket';
 import { Energy } from '@/features';
@@ -13,7 +13,7 @@ interface Popup {
 }
 
 export const Coin: React.FC = () => {
-	const { id, balance_amount } = useAppSelector(({ user }) => user.user);
+	const { id, balanceAmount } = useAppSelector(({ user }) => user.user);
 	const [popups, setPopups] = useState<Popup[]>([]);
 	const touchHandled = useRef(false);
 
@@ -24,14 +24,14 @@ export const Coin: React.FC = () => {
 			id: Date.now(),
 			x,
 			y,
-			value: `+${balance_amount}`,
+			value: `+${balanceAmount}`,
 		};
 		setPopups((currentPopups) => [...currentPopups, newPopup]);
 
 		setTimeout(() => {
 			setPopups((currentPopups) => currentPopups.filter(p => p.id !== newPopup.id));
 		}, 1000);
-	}, [id, balance_amount]);
+	}, [id, balanceAmount]);
 
 	const handleMouseClick = useCallback((event: React.MouseEvent<HTMLImageElement>) => {
 		if (!touchHandled.current) {
