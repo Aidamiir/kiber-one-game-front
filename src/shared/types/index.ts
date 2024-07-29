@@ -1,1 +1,1 @@
-export type { ActionResult } from './common.ts';
+export type { ActionResult } from './common';

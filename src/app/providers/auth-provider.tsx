@@ -1,32 +1,39 @@
-import { type ReactNode, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Fragment, type ReactNode, useEffect } from 'react';
 import { Loading } from '@/shared/ui';
+import { useAppDispatch, useTelegramData } from '@/shared/hooks';
 import { setUserData, useAuthorizeMutation } from '@/entities';
-import { useAppDispatch } from '@/shared/hooks';
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-	const [authorize, { isSuccess, isLoading, data: authData }] = useAuthorizeMutation();
 	const dispatch = useAppDispatch();
-
-	const location = useLocation();
-	const searchParams = new URLSearchParams(location.search);
-	const data = searchParams.get('data');
+	const { user, isReady, error } = useTelegramData();
+	const [authorize, { isSuccess, isLoading, data: authData }] = useAuthorizeMutation();
 
 	useEffect(() => {
-		if (data) {
-			authorize(JSON.parse(data)).unwrap();
+		if (isReady && user) {
+			const dataToSend = JSON.stringify({
+				id: user.id,
+				username: user.username,
+				firstName: user.first_name,
+				lastName: user.last_name
+			});
+
+			authorize(dataToSend).unwrap()
 		}
-	}, [data, authorize]);
+	}, [isReady, user, authorize]);
 
 	useEffect(() => {
-		if (authData && isSuccess) {
+		if (isSuccess && authData) {
 			dispatch(setUserData(authData));
 		}
 	}, [authData, isSuccess, dispatch]);
 
-	if (isLoading && !isSuccess) {
+	if (isLoading) {
 		return <Loading/>;
 	}
 
-	return isSuccess && !isLoading ? children : null;
+	if (error) {
+		return <div>Error: {error}</div>;
+	}
+
+	return isSuccess && !isLoading ? <Fragment>{children}</Fragment> : null;
 };
