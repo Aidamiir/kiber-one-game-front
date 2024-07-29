@@ -38,6 +38,7 @@ export default function BoostsPage() {
 		energyLimitLevel,
 		energyLimitPrice
 	} = useAppSelector(({ user }) => user.user);
+	console.log(id, 'id')
 
 	const handleRestoreBoosts = async () => {
 		await restoreBoosts(id).unwrap();

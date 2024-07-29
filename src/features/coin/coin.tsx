@@ -12,7 +12,7 @@ interface Popup {
 	value: string;
 }
 
-export const Coin: React.FC = () => {
+export const Coin = () => {
 	const { id, balanceAmount } = useAppSelector(({ user }) => user.user);
 	const [popups, setPopups] = useState<Popup[]>([]);
 	const touchHandled = useRef(false);

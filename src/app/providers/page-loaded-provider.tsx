@@ -8,7 +8,6 @@ export const PageLoadedProvider = (props: Props) => {
 	const dispatch = useAppDispatch();
 	const { id } = useAppSelector(({ user }) => user.user);
 
-
 	useEffect(() => {
 		window.onload = () => document.documentElement.classList.add('loaded');
 	}, []);
@@ -16,10 +15,10 @@ export const PageLoadedProvider = (props: Props) => {
 	useEffect(() => {
 		if (!id) return;
 
-		const handleUpdateCoins = (newBalance: number, balance_amount: number) => {
-			dispatch(setBalanceAmount(balance_amount));
+		const handleUpdateCoins = (newBalance: number, balanceAmount: number) => {
+			dispatch(setBalanceAmount(balanceAmount));
 			dispatch(setBalance(newBalance));
-			console.log(newBalance, balance_amount);
+			console.log(newBalance, balanceAmount);
 		};
 
 		const handleUpdateEnergy = (newEnergy: number) => {
