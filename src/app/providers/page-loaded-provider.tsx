@@ -1,5 +1,5 @@
 import { ReactNode, useEffect } from 'react';
-import { setBalance, setBalanceAmount, setEnergy } from '@/entities';
+import { setBalance, setEnergy } from '@/entities';
 import socket from '@/socket.ts';
 import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 
@@ -15,10 +15,8 @@ export const PageLoadedProvider = (props: Props) => {
 	useEffect(() => {
 		if (!id) return;
 
-		const handleUpdateCoins = (newBalance: number, balanceAmount: number) => {
-			dispatch(setBalanceAmount(balanceAmount));
+		const handleUpdateCoins = (newBalance: number) => {
 			dispatch(setBalance(newBalance));
-			console.log(newBalance, balanceAmount);
 		};
 
 		const handleUpdateEnergy = (newEnergy: number) => {

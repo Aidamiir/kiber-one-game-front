@@ -33,8 +33,11 @@ export const userService = api.injectEndpoints({
 
 		energyBoost: builder.mutation<{ quantityEnergyBoost: number }, unknown>({
 			query: (id: number) => ({
-				url: `/users/use-energy-boost/${id}`,
+				url: '/users/use-energy-boost',
 				method: 'POST',
+				body: {
+					id
+				},
 				headers: {
 					// 'Authorization': `Bearer ${dto.token}`,
 				},
@@ -43,8 +46,11 @@ export const userService = api.injectEndpoints({
 
 		turboBoost: builder.mutation<{ quantityTurboBoost: number }, unknown>({
 			query: (id) => ({
-				url: `/users/use-turbo-boost/${id}`,
+				url: '/users/use-turbo-boost',
 				method: 'POST',
+				body: {
+					id
+				},
 				headers: {
 					// 'Authorization': `Bearer ${dto.token}`,
 				},
@@ -53,8 +59,11 @@ export const userService = api.injectEndpoints({
 
 		restoreBoosts: builder.mutation<RestoreBoostsInterface, unknown>({
 			query: (id) => ({
-				url: `/users/restore-boosts/${id}`,
+				url: '/users/restore-boosts',
 				method: 'POST',
+				body: {
+					id
+				},
 				headers: {
 					// 'Authorization': `Bearer ${dto.token}`,
 				},
@@ -63,8 +72,11 @@ export const userService = api.injectEndpoints({
 
 		upgradeMultitap: builder.mutation<UpgradeMultitapInterface, unknown>({
 			query: (id) => ({
-				url: `/users/upgrade-multitap/${id}`,
+				url: '/users/upgrade-multitap',
 				method: 'POST',
+				body: {
+					id
+				},
 				headers: {
 					// 'Authorization': `Bearer ${dto.token}`,
 				},
@@ -73,8 +85,11 @@ export const userService = api.injectEndpoints({
 
 		upgradeEnergyLimit: builder.mutation<UpgradeEnergyLimitInterface, unknown>({
 			query: (id) => ({
-				url: `/users/upgrade-energy-limit/${id}`,
+				url: '/users/upgrade-energy-limit',
 				method: 'POST',
+				body: {
+					id
+				},
 				headers: {
 					// 'Authorization': `Bearer ${dto.token}`,
 				},
