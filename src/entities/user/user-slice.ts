@@ -71,6 +71,7 @@ const userSlice = createSlice({
 
 		builder.addMatcher(userService.endpoints.upgradeMultitap.matchFulfilled, (state, action) => {
 			state.user.balance = action.payload.balance;
+			state.user.balanceAmount = action.payload.balanceAmount;
 			state.user.energyAmount = action.payload.energyAmount;
 			state.user.multitapLevel = action.payload.multitapLevel;
 			state.user.multitapPrice = action.payload.multitapPrice;
