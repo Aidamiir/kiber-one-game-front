@@ -29,17 +29,14 @@ export const PageLoadedProvider = (props: Props) => {
 
 		const handleError = (message: string) => {
 			console.error(message);
-			alert(message); // Можно заменить alert на более дружественный метод отображения ошибок
 		};
 
 		if (!id) return;
 
-		// Устанавливаем интервал для периодического восстановления энергии
 		const energyRecoveryInterval = setInterval(() => {
 			socket.emit('recoverEnergy', { id });
 		}, 2000);
 
-		// Подписываемся на события WebSocket
 		socket.on('updateCoins', handleUpdateCoins);
 		socket.on('updateEnergy', handleUpdateEnergy);
 		socket.on('error', handleError);

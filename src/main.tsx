@@ -9,8 +9,8 @@ import { App, AuthProvider, PageLoadedProvider, store } from './app';
 
 ReactDOM.createRoot(document.getElementById('kog-root')!).render(
 	<React.StrictMode>
-		{/*<BrowserRouter>*/}
-			<BrowserRouter basename={'/kiber-one-game-front/'}>
+		<BrowserRouter>
+		{/*	<BrowserRouter basename={'/kiber-one-game-front/'}>*/}
 			<Provider store={store}>
 				<AuthProvider>
 					<PageLoadedProvider>

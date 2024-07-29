@@ -1,7 +1,7 @@
 import { Fragment, type ReactNode, useEffect } from 'react';
 import { Loading } from '@/shared/ui';
-import { useAppDispatch, useTelegramData } from '@/shared/hooks';
 import { setUserData, useAuthorizeMutation } from '@/entities';
+import { useAppDispatch, useTelegramData } from '@/shared/hooks';
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
 	const dispatch = useAppDispatch();
