@@ -10,12 +10,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 	useEffect(() => {
 		if (isReady && user) {
-			const dataToSend = JSON.stringify({
+			const dataToSend = {
 				id: user.id,
 				username: user.username,
 				firstName: user.first_name,
 				lastName: user.last_name
-			});
+			};
 
 			authorize(dataToSend).unwrap()
 		}
