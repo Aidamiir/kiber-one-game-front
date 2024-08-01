@@ -8,6 +8,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 	const { user, isReady, error } = useTelegramData();
 	const [authorize, { isSuccess, isLoading, data: authData }] = useAuthorizeMutation();
 	const [isExpanded, setIsExpanded] = useState(false);
+	const [delayedRender, setDelayedRender] = useState(false);
 
 	useEffect(() => {
 		if (isReady && user) {
@@ -18,13 +19,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 				lastName: user.last_name
 			};
 
-			setTimeout(() => {
-				window.Telegram.WebApp.expand();
-			}, 1500)
+			window.Telegram.WebApp.expand();
 			setIsExpanded(true);
 			authorize(dataToSend).unwrap();
 		}
 	}, [isReady, user, authorize]);
+
+	useEffect(() => {
+		if (isExpanded) {
+			const timer = setTimeout(() => {
+				setDelayedRender(true);
+			}, 1500);
+
+			return () => clearTimeout(timer); // Очищаем таймер при размонтировании
+		}
+	}, [isExpanded]);
 
 	useEffect(() => {
 		if (isSuccess && authData) {
@@ -32,13 +41,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 		}
 	}, [authData, isSuccess, dispatch]);
 
-	if (isLoading || !isExpanded) {
-		return <Loading/>;
+	if (isLoading || !isExpanded || !delayedRender) {
+		return <Loading />;
 	}
 
 	if (error) {
 		return <div>Error: {error}</div>;
 	}
 
-	return isSuccess && !isLoading ? <Fragment>{children}</Fragment> : null;
+	return <Fragment>{children}</Fragment>;
 };
