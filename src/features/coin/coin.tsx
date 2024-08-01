@@ -21,7 +21,7 @@ export const Coin = () => {
 		socket.emit('changeBalance', { id });
 
 		const newPopup: Popup = {
-			id: Date.now(),
+			id: Date.now() + Math.random(), // Ensure unique ID
 			x,
 			y,
 			value: `+${balanceAmount}`,
