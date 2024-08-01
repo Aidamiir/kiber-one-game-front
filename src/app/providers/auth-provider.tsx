@@ -18,7 +18,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 				lastName: user.last_name
 			};
 
-			window.Telegram.WebApp.expand();
+			setTimeout(() => {
+				window.Telegram.WebApp.expand();
+			}, 1500)
 			setIsExpanded(true);
 			authorize(dataToSend).unwrap();
 		}
@@ -31,7 +33,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 	}, [authData, isSuccess, dispatch]);
 
 	if (isLoading || !isExpanded) {
-		return <Loading />;
+		return <Loading/>;
 	}
 
 	if (error) {
