@@ -1,4 +1,4 @@
-import { Fragment, type ReactNode, useEffect } from 'react';
+import { Fragment, type ReactNode, useEffect, useState } from 'react';
 import { Loading } from '@/shared/ui';
 import { setUserData, useAuthorizeMutation } from '@/entities';
 import { useAppDispatch, useTelegramData } from '@/shared/hooks';
@@ -7,6 +7,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 	const dispatch = useAppDispatch();
 	const { user, isReady, error } = useTelegramData();
 	const [authorize, { isSuccess, isLoading, data: authData }] = useAuthorizeMutation();
+	const [isExpanded, setIsExpanded] = useState(false);
 
 	useEffect(() => {
 		if (isReady && user) {
@@ -18,7 +19,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 			};
 
 			window.Telegram.WebApp.expand();
-			authorize(dataToSend).unwrap()
+			setIsExpanded(true);
+			authorize(dataToSend).unwrap();
 		}
 	}, [isReady, user, authorize]);
 
@@ -28,8 +30,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 		}
 	}, [authData, isSuccess, dispatch]);
 
-	if (isLoading) {
-		return <Loading/>;
+	if (isLoading || !isExpanded) {
+		return <Loading />;
 	}
 
 	if (error) {
