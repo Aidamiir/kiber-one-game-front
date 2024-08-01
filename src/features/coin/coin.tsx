@@ -1,5 +1,5 @@
 import styles from './coin.module.scss';
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import cn from 'classnames';
 import socket from '@/socket';
 import { Energy } from '@/features';
@@ -31,6 +31,8 @@ export const Coin = () => {
 		setTimeout(() => {
 			setPopups((currentPopups) => currentPopups.filter(p => p.id !== newPopup.id));
 		}, 1000);
+
+		window.Telegram.WebApp.HapticFeedback.impactOccurred('soft')
 	}, [id, balanceAmount]);
 
 	const handleMouseClick = useCallback((event: React.MouseEvent<HTMLImageElement>) => {
