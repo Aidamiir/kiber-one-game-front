@@ -1,0 +1,1 @@
+import{j as r,C as e}from"./index-DsYxaWeL.js";import{P as a}from"./page-wrapper-BnE1A2n1.js";const o="_wrapper_njmmu_1",s="_container_njmmu_6",n={wrapper:o,container:s};function p(){return r.jsx(a,{children:r.jsx("div",{className:n.wrapper,children:r.jsx(e,{className:n.container,children:"Скоро..."})})})}export{p as default};
