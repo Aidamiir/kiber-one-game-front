@@ -1,1 +1,0 @@
-import{j as e,c as o}from"./index-B4Y2vylZ.js";const r="_container_1v9qc_1",a={container:r},m=n=>{const{children:s,className:t,...c}=n;return e.jsx("div",{className:o(a.container,t),...c,children:s})};export{m as C};
