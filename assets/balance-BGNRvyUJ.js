@@ -1,1 +1,0 @@
-import{j as s}from"./index-Cy8ODVod.js";const c="_balance_v7253_1",n="_coins_v7253_11",a={balance:c,coins:n},l=()=>s.jsxs("div",{className:a.balance,children:[s.jsx("img",{src:"./images/coin.svg",alt:"Монетка"}),s.jsx("span",{className:a.coins,children:0})]});export{l as B};
