@@ -1,0 +1,1 @@
+import{j as e,c as r}from"./index-C_n9V1YX.js";const s="_pageWrapper_1wvkv_25",t="_float_1wvkv_1",o={pageWrapper:s,"fade-up":"_fade-up_1wvkv_1",float:t},c=({className:a,children:p})=>e.jsx("div",{className:r(o.pageWrapper,a),children:p});export{c as P};
