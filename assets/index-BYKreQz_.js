@@ -1,1 +1,0 @@
-import{j as r,C as e}from"./index-C_n9V1YX.js";import{P as a}from"./page-wrapper-CA_45PUN.js";const o="_wrapper_njmmu_1",s="_container_njmmu_6",n={wrapper:o,container:s};function p(){return r.jsx(a,{children:r.jsx("div",{className:n.wrapper,children:r.jsx(e,{className:n.container,children:"Скоро..."})})})}export{p as default};
