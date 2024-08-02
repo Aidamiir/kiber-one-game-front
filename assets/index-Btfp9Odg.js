@@ -1,0 +1,1 @@
+import{j as n,P as e,C as a}from"./index-DGELfP4Q.js";const s="_wrapper_njmmu_1",o="_container_njmmu_6",r={wrapper:s,container:o};function c(){return n.jsx(e,{children:n.jsx("div",{className:r.wrapper,children:n.jsx(a,{className:r.container,children:"Скоро..."})})})}export{c as default};
