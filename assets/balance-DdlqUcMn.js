@@ -1,1 +1,0 @@
-import{j as s}from"./index-Bn_kKuV9.js";const a="_balance_1cr25_1",n="_coins_1cr25_30",c={balance:a,coins:n},l=()=>s.jsxs("div",{className:c.balance,children:[s.jsx("img",{src:"./images/coin.svg",alt:"Монетка"}),s.jsx("span",{className:c.coins,children:0})]});export{l as B};
